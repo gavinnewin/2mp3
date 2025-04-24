@@ -12,11 +12,11 @@ window.onload = () => {
     message.textContent = "Preparing your download...";
     message.style.color = "black";
 
-    const downloadUrl = `https://twomp3.onrender.com/api/download?url=${encodeURIComponent(url)}`;
+    const downloadUrl = `https://twomp3-production.up.railway.app/api/download?url=${encodeURIComponent(url)}`;
     window.open(downloadUrl, "_blank");
 
     message.textContent = "Download started!";
-    message.style.color = "green";
+    message.style.color = "green";s
   }
 
   document.getElementById("yt-button")?.addEventListener("click", () => {
