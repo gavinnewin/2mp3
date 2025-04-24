@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: twomp3
-    env: node
-    buildCommand: ./render-build.sh && npm install
-    startCommand: node server.js
-    plan: free
