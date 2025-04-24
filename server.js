@@ -17,8 +17,7 @@ app.get("/api/download", (req, res) => {
 
     const filename = "temp-audio.mp3";
     const filepath = path.join(__dirname, filename);
-    const command = `yt-dlp -x --audio-format mp3 --force-overwrites -o "${filename}" "${videoURL}"`;
-
+    const command = `yt-dlp.exe -x --audio-format mp3 --force-overwrites -o "${filename}" "${videoURL}"`;
 
     console.log("▶ Downloading...");
 

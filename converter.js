@@ -24,7 +24,6 @@ window.onload = () => {
   });
 
   document.getElementById("tt-button")?.addEventListener("click", () => {
-    console.log("✅ TikTok button clicked");
     handleDownload("tt-url", "tiktok-message");
   });
 };
