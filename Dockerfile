@@ -1,21 +1,21 @@
 FROM node:18-slim
 
-# Install yt-dlp and ffmpeg
-RUN apt-get update && apt-get install -y ffmpeg curl \
-  && curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp \
-  && chmod a+rx /usr/local/bin/yt-dlp
+# Install ffmpeg, curl, python3, pip and yt-dlp (latest)
+RUN apt-get update && apt-get install -y ffmpeg curl python3-pip \
+  && pip install -U yt-dlp \
+  && ln -s $(which yt-dlp) /usr/local/bin/yt-dlp
 
 # Set working directory
 WORKDIR /app
 
-# Copy files
+# Copy files into the container
 COPY . .
 
-# Install dependencies
+# Install Node dependencies
 RUN npm install
 
-# Expose port
+# Expose the server port
 EXPOSE 4000
 
-# Start server
+# Start the backend server
 CMD ["node", "server.js"]
