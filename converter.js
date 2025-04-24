@@ -16,7 +16,7 @@ window.onload = () => {
     window.open(downloadUrl, "_blank");
 
     message.textContent = "Download started!";
-    message.style.color = "green";s
+    message.style.color = "green";
   }
 
   document.getElementById("yt-button")?.addEventListener("click", () => {
